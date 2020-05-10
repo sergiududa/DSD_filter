@@ -1,0 +1,381 @@
+
+*** Running vivado
+    with args -log avg_filter_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source avg_filter_top.tcl
+
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source avg_filter_top.tcl -notrace
+Command: synth_design -top avg_filter_top -part xc7z014sclg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z014s'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z014s'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 10844 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 356.270 ; gain = 98.816
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'avg_filter_top' [E:/Programing/Xilinx/Projects/dsd_filter_2/dsd_filter_2.srcs/sources_1/new/dsd_filter_top.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'avg_filter' [E:/Programing/Xilinx/Projects/dsd_filter_2/dsd_filter_2.srcs/sources_1/new/dsd_average_filter.sv:23]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter FIFO_DEPTH bound to: 8 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [E:/Programing/Xilinx/Projects/dsd_filter_2/dsd_filter_2.srcs/sources_1/new/dsd_average_filter.sv:70]
+INFO: [Synth 8-6155] done synthesizing module 'avg_filter' (1#1) [E:/Programing/Xilinx/Projects/dsd_filter_2/dsd_filter_2.srcs/sources_1/new/dsd_average_filter.sv:23]
+WARNING: [Synth 8-85] always block has no event control specified [E:/Programing/Xilinx/Projects/dsd_filter_2/dsd_filter_2.srcs/sources_1/new/dsd_filter_top.sv:42]
+WARNING: [Synth 8-3848] Net data_in in module/entity avg_filter_top does not have driver. [E:/Programing/Xilinx/Projects/dsd_filter_2/dsd_filter_2.srcs/sources_1/new/dsd_filter_top.sv:25]
+WARNING: [Synth 8-3848] Net valid_in in module/entity avg_filter_top does not have driver. [E:/Programing/Xilinx/Projects/dsd_filter_2/dsd_filter_2.srcs/sources_1/new/dsd_filter_top.sv:27]
+INFO: [Synth 8-6155] done synthesizing module 'avg_filter_top' (2#1) [E:/Programing/Xilinx/Projects/dsd_filter_2/dsd_filter_2.srcs/sources_1/new/dsd_filter_top.sv:23]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 411.117 ; gain = 153.664
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 411.117 ; gain = 153.664
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z014sclg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 411.117 ; gain = 153.664
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z014sclg484-1
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'avg_filter'
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "valid_o_reg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "next_data_o_reg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-327] inferring latch for variable 'data_o_reg_reg' [E:/Programing/Xilinx/Projects/dsd_filter_2/dsd_filter_2.srcs/sources_1/new/dsd_average_filter.sv:74]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_next_state_reg' [E:/Programing/Xilinx/Projects/dsd_filter_2/dsd_filter_2.srcs/sources_1/new/dsd_average_filter.sv:78]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_next_state_reg' [E:/Programing/Xilinx/Projects/dsd_filter_2/dsd_filter_2.srcs/sources_1/new/dsd_average_filter.sv:78]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   RESET |                              001 | 00000000000000000000000000000001
+            COLLECT_DATA |                              010 | 00000000000000000000000000000010
+             SEND_OUTPUT |                              100 | 00000000000000000000000000000011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'avg_filter'
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_next_state_reg' [E:/Programing/Xilinx/Projects/dsd_filter_2/dsd_filter_2.srcs/sources_1/new/dsd_average_filter.sv:78]
+WARNING: [Synth 8-327] inferring latch for variable 'valid_o_reg_reg' [E:/Programing/Xilinx/Projects/dsd_filter_2/dsd_filter_2.srcs/sources_1/new/dsd_average_filter.sv:73]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[6]' [E:/Programing/Xilinx/Projects/dsd_filter_2/dsd_filter_2.srcs/sources_1/new/dsd_average_filter.sv:76]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[5]' [E:/Programing/Xilinx/Projects/dsd_filter_2/dsd_filter_2.srcs/sources_1/new/dsd_average_filter.sv:76]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[4]' [E:/Programing/Xilinx/Projects/dsd_filter_2/dsd_filter_2.srcs/sources_1/new/dsd_average_filter.sv:76]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[3]' [E:/Programing/Xilinx/Projects/dsd_filter_2/dsd_filter_2.srcs/sources_1/new/dsd_average_filter.sv:76]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[2]' [E:/Programing/Xilinx/Projects/dsd_filter_2/dsd_filter_2.srcs/sources_1/new/dsd_average_filter.sv:76]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[1]' [E:/Programing/Xilinx/Projects/dsd_filter_2/dsd_filter_2.srcs/sources_1/new/dsd_average_filter.sv:76]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[0]' [E:/Programing/Xilinx/Projects/dsd_filter_2/dsd_filter_2.srcs/sources_1/new/dsd_average_filter.sv:76]
+WARNING: [Synth 8-327] inferring latch for variable 'counter_reg' [E:/Programing/Xilinx/Projects/dsd_filter_2/dsd_filter_2.srcs/sources_1/new/dsd_average_filter.sv:72]
+WARNING: [Synth 8-327] inferring latch for variable 'next_sum_reg' [E:/Programing/Xilinx/Projects/dsd_filter_2/dsd_filter_2.srcs/sources_1/new/dsd_average_filter.sv:77]
+WARNING: [Synth 8-327] inferring latch for variable 'memory_reg[7]' [E:/Programing/Xilinx/Projects/dsd_filter_2/dsd_filter_2.srcs/sources_1/new/dsd_average_filter.sv:76]
+WARNING: [Synth 8-327] inferring latch for variable 'next_data_o_reg_reg' [E:/Programing/Xilinx/Projects/dsd_filter_2/dsd_filter_2.srcs/sources_1/new/dsd_average_filter.sv:98]
+WARNING: [Synth 8-327] inferring latch for variable 'next_valid_o_reg_reg' [E:/Programing/Xilinx/Projects/dsd_filter_2/dsd_filter_2.srcs/sources_1/new/dsd_average_filter.sv:99]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 411.117 ; gain = 153.664
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   4 Input     32 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   3 Input     32 Bit        Muxes := 10    
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   3 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module avg_filter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   4 Input     32 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   3 Input     32 Bit        Muxes := 10    
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   3 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 170 (col length:60)
+BRAMs: 214 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[31]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[30]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[29]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[28]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[27]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[26]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[25]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[24]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[23]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[22]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[21]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[20]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[19]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[18]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[17]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[16]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[15]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[14]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[13]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[12]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[11]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[10]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[9]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[8]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[7]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[6]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[5]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[4]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[3]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[2]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[1]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[0]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[31]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[30]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[29]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[28]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[27]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[26]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[25]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[24]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[23]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[22]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[21]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[20]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[19]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[18]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[17]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[16]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[15]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[14]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[13]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[12]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[11]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[10]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[9]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[8]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[7]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[6]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[5]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[4]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[3]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[2]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[1]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/data_o_reg_reg[0]__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/valid_o_reg_reg) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/valid_o_reg_reg__0) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][31]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][30]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][29]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][28]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][27]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][26]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][25]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][24]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][23]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][22]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][21]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][20]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][19]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][18]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][17]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][16]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][15]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][14]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][13]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][12]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][11]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][10]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][9]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][8]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][7]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][6]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][5]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][4]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][3]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][2]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][1]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[6][0]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[5][31]) is unused and will be removed from module avg_filter_top.
+WARNING: [Synth 8-3332] Sequential element (dut/memory_reg[5][30]) is unused and will be removed from module avg_filter_top.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 567.238 ; gain = 309.785
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 567.238 ; gain = 309.785
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 567.238 ; gain = 309.785
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 567.238 ; gain = 309.785
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 567.238 ; gain = 309.785
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 567.238 ; gain = 309.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 567.238 ; gain = 309.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 567.238 ; gain = 309.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 567.238 ; gain = 309.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT1 |     1|
+|2     |FDRE |     3|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+-----------+------+
+|      |Instance |Module     |Cells |
++------+---------+-----------+------+
+|1     |top      |           |     4|
+|2     |  dut    |avg_filter |     3|
++------+---------+-----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 567.238 ; gain = 309.785
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 446 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 567.238 ; gain = 309.785
+Synthesis Optimization Complete : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 567.238 ; gain = 309.785
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+18 Infos, 120 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 681.012 ; gain = 436.570
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'E:/Programing/Xilinx/Projects/dsd_filter_2/dsd_filter_2.runs/synth_1/avg_filter_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file avg_filter_top_utilization_synth.rpt -pb avg_filter_top_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.059 . Memory (MB): peak = 681.012 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat May  9 17:59:45 2020...
